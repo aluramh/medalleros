@@ -10,16 +10,17 @@ import MainFooter from "./layout/MainFooter.vue";
 Vue.use(Router);
 
 export default new Router({
+  mode: "history",
   routes: [
-    {
-      path: "/",
-      name: "index",
-      components: { default: Index, header: MainNavbar, footer: MainFooter },
-      props: {
-        header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
-    },
+    // {
+    //   path: "/",
+    //   name: "index",
+    //   components: { default: Medalleros, header: MainNavbar, footer: MainFooter },
+    //   props: {
+    //     header: { colorOnScroll: 400 },
+    //     footer: { backgroundColor: "black" }
+    //   }
+    // },
     {
       path: "/",
       name: "Home",
@@ -33,6 +34,7 @@ export default new Router({
         footer: { backgroundColor: "black" }
       }
     }
+
     // {
     //   path: "/landing",
     //   name: "landing",
@@ -41,7 +43,7 @@ export default new Router({
     //     header: { colorOnScroll: 400 },
     //     footer: { backgroundColor: "black" }
     //   }
-    // },
+    // }
     // {
     //   path: "/profile",
     //   name: "profile",

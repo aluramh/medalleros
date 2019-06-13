@@ -1,9 +1,5 @@
 <template>
   <div class="wrapper">
-    <div class="title">
-      <h3>{{title}}</h3>
-    </div>
-
     <div class="md-layout">
       <div class="md-layout-item md-size-75 mx-auto md-small-size-100">
         <md-card>
@@ -41,10 +37,6 @@ const carousel3 = require("@/assets/img/nature-3.jpg");
 
 export default {
   props: {
-    title: {
-      type: String,
-      default: "Carousel"
-    },
     images: {
       type: Array,
       default: () => [
@@ -53,7 +45,8 @@ export default {
         { image: carousel3 },
         { image: carousel1 },
         { image: carousel1 }
-      ]
+      ],
+      required: true
     }
   }
 };
