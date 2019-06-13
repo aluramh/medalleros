@@ -35,21 +35,11 @@
 </template>
 
 <script>
-import { Modal } from "@/components";
 const carousel1 = require("@/assets/img/nature-2.jpg");
 const carousel2 = require("@/assets/img/nature.jpg");
 const carousel3 = require("@/assets/img/nature-3.jpg");
 
 export default {
-  components: {
-    Modal
-  },
-  data() {
-    return {
-      classicModal: false,
-      selectedDate: new Date("2018/03/26")
-    };
-  },
   props: {
     title: {
       type: String,
@@ -65,11 +55,9 @@ export default {
         { image: carousel1 }
       ]
     }
-  },
-  methods: {
-    classicModalHide() {
-      this.classicModal = false;
-    }
   }
 };
 </script>
+
+<style>
+</style>

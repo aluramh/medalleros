@@ -38,6 +38,16 @@
         </div>
       </div>
 
+      <!-- SELF Carousel -->
+      <div class="section section-javascript">
+        <div class="container">
+          <div class="title">
+            <h2>Medallas</h2>
+          </div>
+          <CarouselSection title="$250"/>
+        </div>
+      </div>
+
       <!-- Contacto -->
       <div class="section section-contacts">
         <div class="container">
@@ -118,11 +128,13 @@ import Tabs from "./components/TabsSection";
 import NavPills from "./components/NavPillsSection";
 import Notifications from "./components/NotificationsSection";
 // import TypographyImages from "./components/TypographyImagesSection";
+import CarouselSection from "./components/CarouselSection";
 import JavascriptComponents from "./components/JavascriptComponentsSection";
 import { LoginCard } from "@/components";
 
 export default {
   components: {
+    CarouselSection,
     BasicElements,
     Navigation,
     SmallNavigation,
