@@ -26,71 +26,35 @@
             <mobile-menu nav-mobile-section-start="false">
               <!-- Here you can add your items from the section-start of your toolbar -->
             </mobile-menu>
+
             <md-list>
-              <md-list-item
-                href="https://demos.creative-tim.com/vue-material-kit/documentation/"
-                target="_blank"
-                v-if="showDownload"
-              >
-                <i class="material-icons">content_paste</i>
-                <p>Documentation</p>
+              <md-list-item @click="scrollToGallery" href="#">
+                <i class="material-icons">image</i>
+                <p>Galeria</p>
               </md-list-item>
 
-              <li class="md-list-item" v-else>
-                <a
-                  class="md-list-item-router md-list-item-container md-button-clean dropdown"
-                  href="javascript:void(0)"
-                >
-                  <div class="md-list-item-content">
-                    <drop-down direction="down">
-                      <md-button
-                        class="md-button md-button-link md-white md-simple dropdown-toggle"
-                        data-toggle="dropdown"
-                        slot="title"
-                      >
-                        <i class="material-icons">view_carousel</i>
-                        <p>Examples</p>
-                      </md-button>
-                      <ul class="dropdown-menu dropdown-with-icons">
-                        <li>
-                          <a href="#/landing">
-                            <i class="material-icons">view_day</i>
-                            <p>Landing Page</p>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#/login">
-                            <i class="material-icons">fingerprint</i>
-                            <p>Login Page</p>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#/profile">
-                            <i class="material-icons">account_circle</i>
-                            <p>Profile Page</p>
-                          </a>
-                        </li>
-                      </ul>
-                    </drop-down>
-                  </div>
-                </a>
-              </li>
+              <md-list-item @click="scrollToContact" href="#">
+                <i class="material-icons">phone</i>
+                <p>Contacto</p>
+              </md-list-item>
 
-              <md-list-item href="https://twitter.com/CreativeTim" target="_blank">
+              <!-- <md-list-item href="#" target="_blank">
                 <i class="fab fa-twitter"></i>
                 <p class="hidden-lg">Twitter</p>
                 <md-tooltip md-direction="bottom">Follow us on Twitter</md-tooltip>
-              </md-list-item>
-              <md-list-item href="https://www.facebook.com/CreativeTim" target="_blank">
+              </md-list-item>-->
+
+              <md-list-item href="#" target="_blank">
                 <i class="fab fa-facebook-square"></i>
                 <p class="hidden-lg">Facebook</p>
                 <md-tooltip md-direction="bottom">Like us on Facebook</md-tooltip>
               </md-list-item>
-              <md-list-item href="https://www.instagram.com/CreativeTimOfficial" target="_blank">
+
+              <!-- <md-list-item href="#" target="_blank">
                 <i class="fab fa-instagram"></i>
                 <p class="hidden-lg">Instagram</p>
                 <md-tooltip md-direction="bottom">Follow us on Instagram</md-tooltip>
-              </md-list-item>
+              </md-list-item>-->
             </md-list>
           </div>
         </div>
@@ -145,13 +109,14 @@ export default {
       toggledClass: false
     };
   },
-  computed: {
-    showDownload() {
-      const excludedRoutes = ["login", "landing", "profile"];
-      return excludedRoutes.every(r => r !== this.$route.name);
-    }
-  },
+  computed: {},
   methods: {
+    scrollToGallery() {
+      console.log("SCROLL TO GALLERY");
+    },
+    scrollToContact() {
+      console.log("SCROLL TO CONTACT");
+    },
     bodyClick() {
       let bodyClick = document.getElementById("bodyClick");
 

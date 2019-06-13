@@ -1,15 +1,13 @@
 {
-  "name": "vue-material-kit",
-  "author": "Creative Tim https://www.creative-tim.com/",
-  "description": "Vue Material Kit",
-  "version": "1.1.0",
-  "private": true,
+  "name": "medalleros-webpage",
+  "author": "Alex R.",
+  "description": "Medalleros",
+  "version": "1.0.0",
   "scripts": {
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "dev": "npm run serve",
-    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm run dev"
+    "dev": "npm run serve"
   },
   "dependencies": {
     "nouislider": "13.1.0",
