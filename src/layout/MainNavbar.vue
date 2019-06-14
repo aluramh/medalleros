@@ -28,12 +28,12 @@
             </mobile-menu>
 
             <md-list>
-              <md-list-item @click="scrollToGallery" href="#">
+              <md-list-item href="#galeria">
                 <i class="material-icons">image</i>
                 <p>Galeria</p>
               </md-list-item>
 
-              <md-list-item @click="scrollToContact" href="#">
+              <md-list-item href="#information">
                 <i class="material-icons">phone</i>
                 <p>Contacto</p>
               </md-list-item>
@@ -44,12 +44,10 @@
                 <md-tooltip md-direction="bottom">Follow us on Twitter</md-tooltip>
               </md-list-item>-->
 
-              <md-list-item href="#" target="_blank">
+              <md-list-item href="https://www.facebook.com/medalleros.mx" target="_blank">
                 <i class="fab fa-facebook-square"></i>
                 <p class="hidden-lg">Facebook</p>
-                <md-tooltip md-direction="bottom"
-                  >Like us on Facebook</md-tooltip
-                >
+                <md-tooltip md-direction="bottom">Like us on Facebook</md-tooltip>
               </md-list-item>
 
               <!-- <md-list-item href="#" target="_blank">
@@ -117,7 +115,10 @@ export default {
       console.log("SCROLL TO GALLERY");
     },
     scrollToContact() {
-      console.log("SCROLL TO CONTACT");
+      var el = document.getElementById("information");
+      el.scrollIntoView();
+      window.scrollTo(el);
+      console.log("SCROLL TO CONTACT", el);
     },
     bodyClick() {
       let bodyClick = document.getElementById("bodyClick");

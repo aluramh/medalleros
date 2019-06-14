@@ -7,7 +7,7 @@
           <div class="image-wrapper">
             <div class="brand">
               <h1>Medalleros</h1>
-              <h3>Luce tus medallas</h3>
+              <h3>Luce tus medallas!</h3>
             </div>
           </div>
         </div>
@@ -64,7 +64,7 @@
       </section>
 
       <!-- Gallery -->
-      <section class="md-content">
+      <section class="md-content" id="galeria">
         <div class="section">
           <div class="container">
             <div class="md-layout mx-auto">
@@ -118,13 +118,34 @@
         </div>
       </div>-->
 
+      <div class="section section-download" id="information">
+        <div class="container">
+          <div class="md-layout text-center">
+            <div class="md-layout-item md-size-66 md-small-size-100 mx-auto">
+              <h2 class="text-center title">Buscas un medallero? Contactanos!</h2>
+
+              <h2>Pedidos al 8110445403</h2>
+              <h4>
+                Cabo Breton 4057
+                Rincón de La Primavera 6o Sector
+                67174 Guadalupe, N.L.
+              </h4>
+              <p>
+                Medalleros de acero con pintura horneada para exterior e interior
+                <br>Entregas a domicilio
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Contacto -->
       <section id="contact_section">
         <div class="section section-contacts">
           <div class="container">
             <div class="md-layout">
               <div class="md-layout-item md-size-66 md-xsmall-size-100 mx-auto">
-                <h2 class="text-center title">Contactanos!</h2>
+                <h2 class="text-center title">Dudas? Contactanos!</h2>
                 <!-- <h4 :style="{ fontSize: '1.125rem'}" class="text-center description">
                 Divide details about your product or agency work into parts.
                 Write a few lines about each one and contact us about any
@@ -185,18 +206,18 @@
                 </div>
               </div>
 
-              <md-button class="md-twitter">
+              <!-- <md-button class="md-twitter">
                 <i class="fab fa-twitter"></i>Tweet
-              </md-button>
-              <md-button class="md-facebook">
+              </md-button>-->
+              <md-button class="md-facebook" href="https://www.facebook.com/medalleros.mx">
                 <i class="fab fa-facebook-square"></i> Share
               </md-button>
-              <md-button class="md-google">
+              <!-- <md-button class="md-google">
                 <i class="fab fa-google-plus"></i> Share
               </md-button>
               <md-button class="md-github">
                 <i class="fab fa-github"></i> Star
-              </md-button>
+              </md-button>-->
             </div>
           </div>
         </div>

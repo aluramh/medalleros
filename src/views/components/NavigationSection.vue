@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <div id="navigation">
-      <div class="navigation-example" :style="bgImage">
+      <div :style="bgImage" class="navigation-example">
         <div class="md-layout">
           <div class="md-layout-item">
             <md-toolbar class="md-rose">
@@ -19,9 +19,7 @@
                   </md-list>
                 </div>
                 <div class="md-toolbar-section-end">
-                  <md-button
-                    class="md-just-icon md-simple md-white md-toolbar-toggle"
-                  >
+                  <md-button class="md-just-icon md-simple md-white md-toolbar-toggle">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -30,10 +28,10 @@
                   <div class="md-collapse">
                     <div class="md-autocomplete">
                       <md-autocomplete
+                        :md-open-on-focus="false"
+                        :md-options="employees"
                         class="search has-white"
                         v-model="selectedEmployee"
-                        :md-options="employees"
-                        :md-open-on-focus="false"
                       >
                         <label>Search...</label>
                       </md-autocomplete>
@@ -48,9 +46,7 @@
                   <h3 class="md-title">Info Color</h3>
                 </div>
                 <div class="md-toolbar-section-end">
-                  <md-button
-                    class="md-just-icon md-simple md-white md-toolbar-toggle"
-                  >
+                  <md-button class="md-just-icon md-simple md-white md-toolbar-toggle">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -80,9 +76,7 @@
                   <h3 class="md-title">Primary Color</h3>
                 </div>
                 <div class="md-toolbar-section-end">
-                  <md-button
-                    class="md-just-icon md-simple md-white md-toolbar-toggle"
-                  >
+                  <md-button class="md-just-icon md-simple md-white md-toolbar-toggle">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -115,9 +109,7 @@
                   <h3 class="md-title">Navbar with notification</h3>
                 </div>
                 <div class="md-toolbar-section-end">
-                  <md-button
-                    class="md-just-icon md-simple md-white md-toolbar-toggle"
-                  >
+                  <md-button class="md-just-icon md-simple md-white md-toolbar-toggle">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -135,45 +127,37 @@
 
                       <li class="md-list-item">
                         <a
-                          href="javascript:void(0)"
                           class="md-list-item-router md-list-item-container md-button-clean"
+                          href="javascript:void(0)"
                         >
                           <div class="md-list-item-content">
-                            <md-button class="md-rose md-just-icon md-round"
-                              ><md-icon>email</md-icon></md-button
-                            >
+                            <md-button class="md-rose md-just-icon md-round">
+                              <md-icon>email</md-icon>
+                            </md-button>
                           </div>
                         </a>
                       </li>
 
                       <li class="md-list-item">
                         <a
-                          href="javascript:void(0)"
                           class="md-list-item-router md-list-item-container md-button-clean dropdown"
+                          href="javascript:void(0)"
                         >
                           <div class="md-list-item-content">
-                            <drop-down direction="down" class="profile-photo">
-                              <div
-                                class="profile-photo-small"
-                                slot="title"
-                                data-toggle="dropdown"
-                              >
-                                <img :src="img" alt="Circle Image" />
+                            <drop-down class="profile-photo" direction="down">
+                              <div class="profile-photo-small" data-toggle="dropdown" slot="title">
+                                <img :src="img" alt="Circle Image">
                               </div>
                               <ul class="dropdown-menu dropdown-menu-right">
                                 <li class="dropdown-header">Dropdown header</li>
                                 <li>
-                                  <a href="#pablo" class="dropdown-item">Me</a>
+                                  <a class="dropdown-item" href="#pablo">Me</a>
                                 </li>
                                 <li>
-                                  <a href="#pablo" class="dropdown-item"
-                                    >Settings and other stuff</a
-                                  >
+                                  <a class="dropdown-item" href="#pablo">Settings and other stuff</a>
                                 </li>
                                 <li>
-                                  <a href="#pablo" class="dropdown-item"
-                                    >Sign Out</a
-                                  >
+                                  <a class="dropdown-item" href="#pablo">Sign Out</a>
                                 </li>
                               </ul>
                             </drop-down>
@@ -191,9 +175,7 @@
                   <h3 class="md-title">Navbar with profile</h3>
                 </div>
                 <div class="md-toolbar-section-end">
-                  <md-button
-                    class="md-just-icon md-simple md-white md-toolbar-toggle"
-                  >
+                  <md-button class="md-just-icon md-simple md-white md-toolbar-toggle">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -211,13 +193,11 @@
 
                       <li class="md-list-item">
                         <a
-                          href="javascript:void(0)"
                           class="md-list-item-router md-list-item-container md-button-clean"
+                          href="javascript:void(0)"
                         >
                           <div class="md-list-item-content">
-                            <md-button class="md-rose md-round"
-                              >Register</md-button
-                            >
+                            <md-button class="md-rose md-round">Register</md-button>
                           </div>
                         </a>
                       </li>
@@ -232,9 +212,7 @@
                   <h3 class="md-title">Transparent</h3>
                 </div>
                 <div class="md-toolbar-section-end">
-                  <md-button
-                    class="md-just-icon md-simple md-white md-toolbar-toggle"
-                  >
+                  <md-button class="md-just-icon md-simple md-white md-toolbar-toggle">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -242,11 +220,11 @@
 
                   <div class="md-collapse">
                     <md-list>
-                      <md-list-item href="javascript:void(0)">
+                      <md-list-item href="https://www.facebook.com/medalleros.mx">
                         <i class="fab fa-facebook-square"></i>
                         <p>Facebook</p>
                       </md-list-item>
-
+                      <!-- 
                       <md-list-item href="javascript:void(0)">
                         <i class="fab fa-twitter"></i>
                         <p>Twitter</p>
@@ -255,7 +233,7 @@
                       <md-list-item href="javascript:void(0)">
                         <i class="fab fa-instagram"></i>
                         <p>Instagram</p>
-                      </md-list-item>
+                      </md-list-item>-->
                     </md-list>
                   </div>
                 </div>
