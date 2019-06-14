@@ -64,8 +64,6 @@
       </section>
 
       <!-- Gallery -->
-      <button @click="classicModalOpen(imagesArray[selectedPrice][0].image)">Open modal</button>
-
       <section class="md-content">
         <div class="section">
           <div class="container">
