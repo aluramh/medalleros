@@ -156,7 +156,7 @@
 
                   <div class="md-layout">
                     <div class="md-layout-item md-size-33 mx-auto text-center">
-                      <md-button class="md-success">Send Message</md-button>
+                      <md-button class="md-success" type="submit">Enviar mensaje</md-button>
                     </div>
                   </div>
                 </form>
@@ -237,10 +237,11 @@ export default {
     return {
       modalImage: null,
       classicModal: false,
-      firstname: null,
-      email: null,
       selectedPrice: 300,
-      imagesArray
+      imagesArray,
+      name: null,
+      email: null,
+      message: null
     };
   },
   mounted() {
