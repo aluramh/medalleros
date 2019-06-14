@@ -21,14 +21,14 @@
                   <h4>{{ caption }}</h4>
                 </div>
 
-                <div @click="handleClick" class="clickable">
+                <div @click="handleClick(image)" class="clickable">
                   <img
                     :height="height"
                     :src="image"
                     :style="{ height: `${height}px` }"
                     alt="carousel1"
                     class="cover"
-                  />
+                  >
                 </div>
               </slide>
             </template>
@@ -71,8 +71,9 @@ export default {
     }
   },
   methods: {
-    handleClick() {
-      console.log("CLICKED");
+    handleClick(src) {
+      this.$emit("imageClicked", src);
+      console.log("CLICKED", src);
     }
   }
 };

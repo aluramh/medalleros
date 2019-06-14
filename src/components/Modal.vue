@@ -3,20 +3,17 @@
     <div class="modal-mask">
       <div class="modal-wrapper">
         <div class="modal-container" v-click-outside="closeModal">
-          <!-- <div class="modal-header">
+          <div class="modal-header">
             <slot name="header"></slot>
-          </div>-->
-
-          <div class="modal-body text-center">
-            <slot name="body">
-              <img :alt="srcImage" :src="srcImage">
-              <!-- <div :style="{ backgroundColor: 'red', height: '100%', width: '100%'}"></div> -->
-            </slot>
           </div>
 
-          <!-- <div class="modal-footer">
+          <div class="modal-body text-center">
+            <slot name="body"></slot>
+          </div>
+
+          <div class="modal-footer">
             <slot name="footer"></slot>
-          </div>-->
+          </div>
         </div>
       </div>
     </div>

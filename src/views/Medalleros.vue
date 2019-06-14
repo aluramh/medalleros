@@ -58,12 +58,14 @@
                 <md-button :class="buttonClass(350)" @click="selectedPrice = 350">$350</md-button>
               </div>
             </div>
-            <CarouselSection :images="imagesArray[selectedPrice]"/>
+            <CarouselSection :images="imagesArray[selectedPrice]" @imageClicked="classicModalOpen"/>
           </div>
         </div>
       </section>
 
       <!-- Gallery -->
+      <button @click="classicModalOpen(imagesArray[selectedPrice][0].image)">Open modal</button>
+
       <section class="md-content">
         <div class="section">
           <div class="container">
@@ -73,6 +75,7 @@
                   <md-card
                     :key="image"
                     :style="cardStyle(image)"
+                    @click.native="classicModalOpen(image)"
                     md-with-hover
                     v-for="{image} in imagesArray[selectedPrice]"
                   >
@@ -85,7 +88,30 @@
         </div>
       </section>
 
-      <!-- <Modal :srcImage="imagesArray[selectedPrice][0].image" v-if="!showModal"></Modal> -->
+      <!-- Modal -->
+      <Modal @close="classicModalHide" v-if="classicModal">
+        <template slot="header">
+          <!-- <h4 class="modal-title">Modal Title</h4> -->
+          <md-button
+            @click="classicModalHide"
+            class="md-simple md-just-icon md-round modal-default-button"
+          >
+            <md-icon>clear</md-icon>
+          </md-button>
+        </template>
+
+        <template slot="body">
+          <img :alt="modalImage" :src="modalImage">
+          <!-- <p>
+            Far far away, behind the word mountains, far from the
+            countries Vokalia and Consonan
+          </p>-->
+        </template>
+
+        <template slot="footer">
+          <md-button @click="classicModalHide" class="md-danger md-simple">Close</md-button>
+        </template>
+      </Modal>
 
       <!-- UI Components
       <div class="section section-javascript">
@@ -212,12 +238,15 @@ export default {
   data() {
     return {
       modalImage: null,
-      showModal: false,
+      classicModal: false,
       firstname: null,
       email: null,
       selectedPrice: 300,
       imagesArray
     };
+  },
+  mounted() {
+    this.modalImage = this.imagesArray[this.selectedPrice][0].image;
   },
   methods: {
     buttonClass(price) {
@@ -231,6 +260,13 @@ export default {
         backgroundSize: "cover",
         backgroundPosition: "center"
       };
+    },
+    classicModalHide() {
+      this.classicModal = false;
+    },
+    classicModalOpen(src) {
+      this.classicModal = true;
+      this.modalImage = src;
     }
   },
   computed: {
@@ -248,7 +284,8 @@ export default {
   flex-flow: row;
   display: flex;
 
-  .md-card {
+  .md-card,
+  .md-card-media-cover {
     width: 150px;
     height: 150px;
     margin: 4px;
