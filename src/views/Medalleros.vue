@@ -132,24 +132,24 @@
                 couple of hours.
                 </h4>-->
 
-                <form class="contact-form" method="POST" name="contact" netlify>
+                <form class="contact-form" data-netlify="true" method="POST" name="contact">
                   <div class="md-layout">
                     <div class="md-layout-item md-size-50">
                       <md-field>
                         <label>Tu nombre</label>
-                        <md-input type="text" v-model="name"></md-input>
+                        <md-input name="name" type="text" v-model="name"></md-input>
                       </md-field>
                     </div>
                     <div class="md-layout-item md-size-50">
                       <md-field>
                         <label>Tu email</label>
-                        <md-input type="email" v-model="email"></md-input>
+                        <md-input name="email" type="email" v-model="email"></md-input>
                       </md-field>
                     </div>
                   </div>
                   <md-field maxlength="5">
                     <label>Tu mensaje</label>
-                    <md-textarea v-model="message"></md-textarea>
+                    <md-textarea name="message" v-model="message"></md-textarea>
                   </md-field>
 
                   <br>
