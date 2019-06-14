@@ -24,7 +24,7 @@
                   <h4>{{ caption }}</h4>
                 </div>
 
-                <img :src="image" alt="carousel1" />
+                <img :src="image" alt="carousel1">
               </slide>
             </template>
           </carousel>
@@ -35,15 +35,11 @@
 </template>
 
 <script>
-import { Modal } from "@/components";
 const carousel1 = require("@/assets/img/nature-2.jpg");
 const carousel2 = require("@/assets/img/nature.jpg");
 const carousel3 = require("@/assets/img/nature-3.jpg");
 
 export default {
-  components: {
-    Modal
-  },
   data() {
     return {
       classicModal: false,

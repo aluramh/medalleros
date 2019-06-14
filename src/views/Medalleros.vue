@@ -37,42 +37,55 @@
         <div class="section section-javascript">
           <div class="container">
             <div class="md-layout">
-              <div
-                class="md-layout-item md-size-66 md-xsmall-size-100 mx-auto text-center"
-              >
+              <div class="md-layout-item md-size-66 md-xsmall-size-100 mx-auto text-center">
                 <h2 class="title text-center">Medallas</h2>
-                <h5 class="description">
-                  Dale un vistazo a nuestra seleccion de medalleros disponibles.
-                </h5>
+                <h5
+                  class="description"
+                >Dale un vistazo a nuestra seleccion de medalleros disponibles.</h5>
               </div>
             </div>
 
             <div class="md-layout">
               <div class="md-layout-item md-size-66 mx-auto text-center">
-                <md-button
-                  :class="buttonClass(250)"
-                  @click="selectedPrice = 250"
-                  >$250</md-button
-                >
+                <md-button :class="buttonClass(250)" @click="selectedPrice = 250">$250</md-button>
 
                 <md-button
                   :class="buttonClass(300)"
                   :style="{ marginLeft: '1rem', marginRight: '1rem' }"
                   @click="selectedPrice = 300"
-                  >$300</md-button
-                >
+                >$300</md-button>
 
-                <md-button
-                  :class="buttonClass(350)"
-                  @click="selectedPrice = 350"
-                  >$350</md-button
-                >
+                <md-button :class="buttonClass(350)" @click="selectedPrice = 350">$350</md-button>
               </div>
             </div>
-            <CarouselSection :images="imagesArray[selectedPrice]" />
+            <CarouselSection :images="imagesArray[selectedPrice]"/>
           </div>
         </div>
       </section>
+
+      <!-- Gallery -->
+      <section class="md-content">
+        <div class="section">
+          <div class="container">
+            <div class="md-layout mx-auto">
+              <div class="card-holder">
+                <div class="md-layout-item md-size-90 md-xsmall-size-100 mx-auto">
+                  <md-card
+                    :key="image"
+                    :style="cardStyle(image)"
+                    md-with-hover
+                    v-for="{image} in imagesArray[selectedPrice]"
+                  >
+                    <md-card-content></md-card-content>
+                  </md-card>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- <Modal :srcImage="imagesArray[selectedPrice][0].image" v-if="!showModal"></Modal> -->
 
       <!-- UI Components
       <div class="section section-javascript">
@@ -94,6 +107,7 @@
                 further collaboration. We will responde get back to you in a
                 couple of hours.
                 </h4>-->
+
                 <form class="contact-form">
                   <div class="md-layout">
                     <div class="md-layout-item md-size-50">
@@ -114,7 +128,7 @@
                     <md-textarea v-model="message"></md-textarea>
                   </md-field>
 
-                  <br />
+                  <br>
 
                   <div class="md-layout">
                     <div class="md-layout-item md-size-33 mx-auto text-center">
@@ -171,9 +185,11 @@ import CarouselSection from "./components/CarouselSection";
 import JavascriptComponents from "./components/JavascriptComponentsSection";
 import { LoginCard } from "@/components";
 import imagesArray from "@/assets/js/images.js";
+import { Modal } from "@/components";
 
 export default {
   components: {
+    Modal,
     CarouselSection,
     BasicElements,
     Navigation,
@@ -195,15 +211,26 @@ export default {
   },
   data() {
     return {
+      modalImage: null,
+      showModal: false,
       firstname: null,
       email: null,
-      selectedPrice: 250,
+      selectedPrice: 300,
       imagesArray
     };
   },
   methods: {
     buttonClass(price) {
       return this.selectedPrice == price ? "md-primary" : "md-secondary";
+    },
+    cardStyle(src) {
+      return {
+        backgroundImage: src,
+        background: `url(${src})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center"
+      };
     }
   },
   computed: {
@@ -217,6 +244,19 @@ export default {
 </script>
 
 <style lang="scss">
+.card-holder {
+  flex-flow: row;
+  display: flex;
+
+  .md-card {
+    width: 150px;
+    height: 150px;
+    margin: 4px;
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
 .section-download {
   .md-button + .md-button {
     margin-left: 5px;
@@ -229,3 +269,5 @@ export default {
   }
 }
 </style>
+
+
