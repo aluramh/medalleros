@@ -1,5 +1,6 @@
 <template>
   <div class="wrapper">
+    Height: {{this.height}}
     <div class="md-layout">
       <div class="md-layout-item md-size-75 mx-auto md-small-size-100">
         <md-card>
@@ -8,6 +9,7 @@
             :mouse-drag="false"
             :per-page="1"
             :speed="700"
+            :style="carouselStyle"
             autoplay
             loop
             navigationEnabled
@@ -20,7 +22,15 @@
                   <h4>{{caption}}</h4>
                 </div>
 
-                <img :src="image" alt="carousel1">
+                <div @click="handleClick" class="clickable">
+                  <img
+                    :height="height"
+                    :src="image"
+                    :style="{ height: `${height}px` }"
+                    alt="carousel1"
+                    class="cover"
+                  >
+                </div>
               </slide>
             </template>
           </carousel>
@@ -35,7 +45,14 @@ const carousel1 = require("@/assets/img/nature-2.jpg");
 const carousel2 = require("@/assets/img/nature.jpg");
 const carousel3 = require("@/assets/img/nature-3.jpg");
 
+const height = 500;
+
 export default {
+  data() {
+    return {
+      height
+    };
+  },
   props: {
     images: {
       type: Array,
@@ -48,9 +65,25 @@ export default {
       ],
       required: true
     }
+  },
+  computed: {
+    carouselStyle() {
+      return { maxHeight: `${this.height}px` };
+    }
+  },
+  methods: {
+    handleClick() {
+      console.log("CLICKED");
+    }
   }
 };
 </script>
 
 <style>
+.cover {
+  object-fit: cover;
+}
+.clickable {
+  cursor: pointer;
+}
 </style>

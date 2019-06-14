@@ -47,17 +47,18 @@
 
             <div class="md-layout">
               <div class="md-layout-item md-size-66 mx-auto text-center">
-                <md-button class="md-primary">$250</md-button>
+                <md-button @click="selectedPrice = 250" class="md-primary">$250</md-button>
 
                 <md-button
                   :style="{ marginLeft: '1rem', marginRight: '1rem' }"
+                  @click="selectedPrice = 300"
                   class="md-primary"
                 >$300</md-button>
-                <md-button class="md-primary">$350</md-button>
+
+                <md-button @click="selectedPrice = 350" class="md-primary">$350</md-button>
               </div>
             </div>
-
-            <CarouselSection/>
+            <CarouselSection :images="imagesArray[selectedPrice]"/>
           </div>
         </div>
       </section>
@@ -156,6 +157,7 @@ import Notifications from "./components/NotificationsSection";
 import CarouselSection from "./components/CarouselSection";
 import JavascriptComponents from "./components/JavascriptComponentsSection";
 import { LoginCard } from "@/components";
+import imagesArray from "@/assets/js/images.js";
 
 export default {
   components: {
@@ -175,13 +177,15 @@ export default {
     image: {
       type: String,
       // default: require("@/assets/img/headerImage.jpg")
-      default: require("../../public/images/medalleros200/IMG_1519.jpg")
+      default: require("../../public/images/medalleros200/IMG_1512.jpg")
     }
   },
   data() {
     return {
       firstname: null,
-      email: null
+      email: null,
+      selectedPrice: 250,
+      imagesArray
     };
   },
   methods: {},
