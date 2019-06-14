@@ -30,6 +30,13 @@
       >
     </noscript>
     <div id="app"></div>
+
+    <!-- Stand-in form for Netlify -->
+    <form name="ask-question" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="radio" name="panelist" />
+      <textarea name="question"></textarea>
+    </form>
     <!-- built files will be auto injected -->
   </body>
 </html>

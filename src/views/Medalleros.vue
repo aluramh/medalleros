@@ -132,7 +132,15 @@
                 couple of hours.
                 </h4>-->
 
-                <form class="contact-form" data-netlify="true" method="POST" name="contact">
+                <form
+                  class="contact-form"
+                  data-netlify="true"
+                  data-netlify-honeypot="bot-field"
+                  method="POST"
+                  name="contact-form"
+                >
+                  <input name="form-name" type="hidden" value="contact-form">
+
                   <div class="md-layout">
                     <div class="md-layout-item md-size-50">
                       <md-field>
