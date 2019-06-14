@@ -37,28 +37,39 @@
         <div class="section section-javascript">
           <div class="container">
             <div class="md-layout">
-              <div class="md-layout-item md-size-66 md-xsmall-size-100 mx-auto text-center">
+              <div
+                class="md-layout-item md-size-66 md-xsmall-size-100 mx-auto text-center"
+              >
                 <h2 class="title text-center">Medallas</h2>
-                <h5
-                  class="description"
-                >Dale un vistazo a nuestra seleccion de medalleros disponibles.</h5>
+                <h5 class="description">
+                  Dale un vistazo a nuestra seleccion de medalleros disponibles.
+                </h5>
               </div>
             </div>
 
             <div class="md-layout">
               <div class="md-layout-item md-size-66 mx-auto text-center">
-                <md-button @click="selectedPrice = 250" class="md-primary">$250</md-button>
+                <md-button
+                  :class="buttonClass(250)"
+                  @click="selectedPrice = 250"
+                  >$250</md-button
+                >
 
                 <md-button
+                  :class="buttonClass(300)"
                   :style="{ marginLeft: '1rem', marginRight: '1rem' }"
                   @click="selectedPrice = 300"
-                  class="md-primary"
-                >$300</md-button>
+                  >$300</md-button
+                >
 
-                <md-button @click="selectedPrice = 350" class="md-primary">$350</md-button>
+                <md-button
+                  :class="buttonClass(350)"
+                  @click="selectedPrice = 350"
+                  >$350</md-button
+                >
               </div>
             </div>
-            <CarouselSection :images="imagesArray[selectedPrice]"/>
+            <CarouselSection :images="imagesArray[selectedPrice]" />
           </div>
         </div>
       </section>
@@ -87,22 +98,24 @@
                   <div class="md-layout">
                     <div class="md-layout-item md-size-50">
                       <md-field>
-                        <label>Your Name</label>
+                        <label>Tu nombre</label>
                         <md-input type="text" v-model="name"></md-input>
                       </md-field>
                     </div>
                     <div class="md-layout-item md-size-50">
                       <md-field>
-                        <label>Your Email</label>
+                        <label>Tu email</label>
                         <md-input type="email" v-model="email"></md-input>
                       </md-field>
                     </div>
                   </div>
                   <md-field maxlength="5">
-                    <label>Your Message</label>
+                    <label>Tu mensaje</label>
                     <md-textarea v-model="message"></md-textarea>
                   </md-field>
-                  <br>
+
+                  <br />
+
                   <div class="md-layout">
                     <div class="md-layout-item md-size-33 mx-auto text-center">
                       <md-button class="md-success">Send Message</md-button>
@@ -188,7 +201,11 @@ export default {
       imagesArray
     };
   },
-  methods: {},
+  methods: {
+    buttonClass(price) {
+      return this.selectedPrice == price ? "md-primary" : "md-secondary";
+    }
+  },
   computed: {
     headerStyle() {
       return {

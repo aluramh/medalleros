@@ -1,6 +1,5 @@
 <template>
   <div class="wrapper">
-    Height: {{this.height}}
     <div class="md-layout">
       <div class="md-layout-item md-size-75 mx-auto md-small-size-100">
         <md-card>
@@ -19,7 +18,7 @@
             <template v-for="({ image, caption }, i) in images">
               <slide :key="i">
                 <div class="carousel-caption" v-if="caption">
-                  <h4>{{caption}}</h4>
+                  <h4>{{ caption }}</h4>
                 </div>
 
                 <div @click="handleClick" class="clickable">
@@ -29,7 +28,7 @@
                     :style="{ height: `${height}px` }"
                     alt="carousel1"
                     class="cover"
-                  >
+                  />
                 </div>
               </slide>
             </template>

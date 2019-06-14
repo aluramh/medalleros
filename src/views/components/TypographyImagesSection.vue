@@ -15,7 +15,7 @@
             :src="image"
             alt="Rounded Image"
             class="rounded"
-          >
+          />
         </div>
         <div
           :class="{ 'text-center': responsive }"
@@ -27,7 +27,7 @@
             :src="image"
             alt="Circle Image"
             class="rounded-circle"
-          >
+          />
         </div>
         <div
           :class="{ 'text-center': responsive }"
@@ -39,7 +39,7 @@
             :src="image"
             alt="Raised Image"
             class="img-raised rounded"
-          >
+          />
         </div>
         <div
           :class="{ 'text-center': responsive }"
@@ -51,7 +51,7 @@
             :src="image"
             alt="Thumbnail Image"
             class="img-raised rounded-circle"
-          >
+          />
         </div>
       </div>
     </div>

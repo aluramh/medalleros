@@ -47,7 +47,9 @@
               <md-list-item href="#" target="_blank">
                 <i class="fab fa-facebook-square"></i>
                 <p class="hidden-lg">Facebook</p>
-                <md-tooltip md-direction="bottom">Like us on Facebook</md-tooltip>
+                <md-tooltip md-direction="bottom"
+                  >Like us on Facebook</md-tooltip
+                >
               </md-list-item>
 
               <!-- <md-list-item href="#" target="_blank">

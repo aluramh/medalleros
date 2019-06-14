@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <div class="title">
-      <h3>{{title}}</h3>
+      <h3>{{ title }}</h3>
     </div>
 
     <div class="md-layout">
@@ -21,10 +21,10 @@
             <template v-for="({ image, caption }, i) in images">
               <slide :key="i">
                 <div class="carousel-caption" v-if="caption">
-                  <h4>{{caption}}</h4>
+                  <h4>{{ caption }}</h4>
                 </div>
 
-                <img :src="image" alt="carousel1">
+                <img :src="image" alt="carousel1" />
               </slide>
             </template>
           </carousel>
