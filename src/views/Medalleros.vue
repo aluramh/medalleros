@@ -132,7 +132,7 @@
                 couple of hours.
                 </h4>-->
 
-                <form class="contact-form">
+                <form class="contact-form" data-netlify="true" method="POST" name="contact">
                   <div class="md-layout">
                     <div class="md-layout-item md-size-50">
                       <md-field>
@@ -304,5 +304,3 @@ export default {
   }
 }
 </style>
-
-
