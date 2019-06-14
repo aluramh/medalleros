@@ -45,6 +45,18 @@
               </div>
             </div>
 
+            <div class="md-layout">
+              <div class="md-layout-item md-size-66 mx-auto text-center">
+                <md-button class="md-primary">$250</md-button>
+
+                <md-button
+                  :style="{ marginLeft: '1rem', marginRight: '1rem' }"
+                  class="md-primary"
+                >$300</md-button>
+                <md-button class="md-primary">$350</md-button>
+              </div>
+            </div>
+
             <CarouselSection/>
           </div>
         </div>
@@ -162,7 +174,8 @@ export default {
   props: {
     image: {
       type: String,
-      default: require("@/assets/images/fotosdevariosmedalleros/IMG_4178.jpg")
+      // default: require("@/assets/img/headerImage.jpg")
+      default: require("../../public/images/medalleros200/IMG_1519.jpg")
     }
   },
   data() {

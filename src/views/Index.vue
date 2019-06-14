@@ -149,8 +149,8 @@ export default {
   bodyClass: "index-page",
   props: {
     image: {
-      type: String,
-      default: require("@/assets/images/fotosdevariosmedalleros/IMG_4178.jpg")
+      type: String
+      // default: require("@/assets/images/fotosdevariosmedalleros/IMG_4178.jpg")
     },
     leaf4: {
       type: String,
