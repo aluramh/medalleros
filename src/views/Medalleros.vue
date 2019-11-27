@@ -58,7 +58,7 @@
                 <md-button :class="buttonClass(350)" @click="selectedPrice = 350">$350</md-button>
               </div>
             </div>
-            <CarouselSection :images="imagesArray[selectedPrice]" @imageClicked="classicModalOpen"/>
+            <CarouselSection :images="imagesArray[selectedPrice]" @imageClicked="classicModalOpen" />
           </div>
         </div>
       </section>
@@ -99,7 +99,7 @@
         </template>
 
         <template slot="body">
-          <img :alt="modalImage" :src="modalImage">
+          <img :alt="modalImage" :src="modalImage" />
           <!-- <p>
             Far far away, behind the word mountains, far from the
             countries Vokalia and Consonan
@@ -118,82 +118,11 @@
         </div>
       </div>-->
 
-      <div class="section section-download" id="information">
-        <div class="container">
-          <div class="md-layout text-center">
-            <div class="md-layout-item md-size-66 md-small-size-100 mx-auto">
-              <h2 class="text-center title">Buscas un medallero? Contactanos!</h2>
-
-              <h2>Pedidos al 8110445403</h2>
-              <h4>
-                Cabo Breton 4057
-                Rincón de La Primavera 6o Sector
-                67174 Guadalupe, N.L.
-              </h4>
-              <p>
-                Medalleros de acero con pintura horneada para exterior e interior
-                <br>Entregas a domicilio
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <!-- Information -->
+      <InformationSection />
 
       <!-- Contacto -->
-      <section id="contact_section">
-        <div class="section section-contacts">
-          <div class="container">
-            <div class="md-layout">
-              <div class="md-layout-item md-size-66 md-xsmall-size-100 mx-auto">
-                <h2 class="text-center title">Dudas? Contactanos!</h2>
-                <!-- <h4 :style="{ fontSize: '1.125rem'}" class="text-center description">
-                Divide details about your product or agency work into parts.
-                Write a few lines about each one and contact us about any
-                further collaboration. We will responde get back to you in a
-                couple of hours.
-                </h4>-->
-
-                <form
-                  class="contact-form"
-                  data-netlify="true"
-                  data-netlify-honeypot="bot-field"
-                  method="POST"
-                  name="contact-form"
-                >
-                  <input name="form-name" type="hidden" value="contact-form">
-
-                  <div class="md-layout">
-                    <div class="md-layout-item md-size-50">
-                      <md-field>
-                        <label>Tu nombre</label>
-                        <md-input name="name" type="text" v-model="name"></md-input>
-                      </md-field>
-                    </div>
-                    <div class="md-layout-item md-size-50">
-                      <md-field>
-                        <label>Tu email</label>
-                        <md-input name="email" type="email" v-model="email"></md-input>
-                      </md-field>
-                    </div>
-                  </div>
-                  <md-field maxlength="5">
-                    <label>Tu mensaje</label>
-                    <md-textarea name="message" v-model="message"></md-textarea>
-                  </md-field>
-
-                  <br>
-
-                  <div class="md-layout">
-                    <div class="md-layout-item md-size-33 mx-auto text-center">
-                      <md-button class="md-success" type="submit">Enviar mensaje</md-button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ContactSection />
 
       <!-- Social media -->
       <section id="socialmedia_section">
@@ -239,6 +168,8 @@ import JavascriptComponents from "./components/JavascriptComponentsSection";
 import { LoginCard } from "@/components";
 import imagesArray from "@/assets/js/images.js";
 import { Modal } from "@/components";
+import ContactSection from "./sections/ContactSection";
+import InformationSection from "./sections/InformationSection";
 
 export default {
   components: {
@@ -252,7 +183,10 @@ export default {
     Notifications,
     // TypographyImages,
     JavascriptComponents,
-    LoginCard
+    LoginCard,
+    // Sections
+    ContactSection,
+    InformationSection
   },
   bodyClass: "index-page",
   props: {

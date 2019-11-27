@@ -8,7 +8,9 @@
   >
     <div class="md-toolbar-row md-collapse-lateral">
       <div class="md-toolbar-section-start">
-        <h3 class="md-title">Medalleros</h3>
+        <h3 class="md-title">
+          <b>Medalleros</b>
+        </h3>
       </div>
       <div class="md-toolbar-section-end">
         <md-button
@@ -47,7 +49,7 @@
               <md-list-item href="https://www.facebook.com/medalleros.mx" target="_blank">
                 <i class="fab fa-facebook-square"></i>
                 <p class="hidden-lg">Facebook</p>
-                <md-tooltip md-direction="bottom">Like us on Facebook</md-tooltip>
+                <md-tooltip md-direction="bottom">Buscanos en Facebook!</md-tooltip>
               </md-list-item>
 
               <!-- <md-list-item href="#" target="_blank">
