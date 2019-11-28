@@ -7,7 +7,9 @@
     <div class="container">
       <div class="md-layout text-center">
         <div class="md-layout-item md-size-66 md-small-size-100 mx-auto">
-          <h2 class="text-center title">Buscas un medallero? Contáctanos!</h2>
+          <h2 class="text-center title">
+            Buscas un medallero? Contáctanos! 📞
+          </h2>
 
           <h2>
             Pedidos al telefono

@@ -1,19 +1,19 @@
-
-
 <template>
   <section id="contact_section">
     <div class="section section-contacts">
       <div class="container">
         <div class="md-layout">
           <div class="md-layout-item md-size-66 md-xsmall-size-100 mx-auto">
-            <h2 class="text-center title">Dudas? Escríbenos!</h2>
+            <h2 class="text-center title">Dudas? Escríbenos! 📝</h2>
             <h4
-              :style="{ fontSize: '1.125rem'}"
+              :style="{ fontSize: '1.125rem' }"
               class="text-center description"
-            >Pedidos, dudas o comentarios. Nosotros te contactaremos.</h4>
+            >
+              Pedidos, dudas o comentarios. Nosotros te contactaremos.
+            </h4>
 
             <form
-              class="contact-form"
+              class="contact-form p-4"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
               method="POST"
@@ -22,16 +22,20 @@
               <input name="form-name" type="hidden" value="contact-form" />
 
               <div class="md-layout">
-                <div class="md-layout-item md-size-50">
+                <div class="md-layout-item md-size-50 md-small-size-100">
                   <md-field>
                     <label>Tu nombre</label>
                     <md-input name="name" type="text" v-model="name"></md-input>
                   </md-field>
                 </div>
-                <div class="md-layout-item md-size-50">
+                <div class="md-layout-item md-size-50 md-small-size-100">
                   <md-field>
                     <label>Tu email</label>
-                    <md-input name="email" type="email" v-model="email"></md-input>
+                    <md-input
+                      name="email"
+                      type="email"
+                      v-model="email"
+                    ></md-input>
                   </md-field>
                 </div>
               </div>
@@ -43,8 +47,10 @@
               <br />
 
               <div class="md-layout">
-                <div class="md-layout-item md-size-33 mx-auto text-center">
-                  <md-button class="md-success" type="submit">Enviar mensaje</md-button>
+                <div class="md-layout-item mx-auto text-center">
+                  <md-button class="md-success" type="submit"
+                    >Enviar mensaje</md-button
+                  >
                 </div>
               </div>
             </form>
@@ -66,3 +72,10 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+.contact-form {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+</style>

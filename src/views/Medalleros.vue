@@ -161,8 +161,9 @@
                 class="md-facebook"
                 href="https://www.facebook.com/medalleros.mx"
               >
-                <i class="fab fa-facebook-square"></i> Share
+                <i class="fab fa-facebook-square"></i>Facebook
               </md-button>
+
               <!-- <md-button class="md-google">
                 <i class="fab fa-google-plus"></i> Share
               </md-button>
