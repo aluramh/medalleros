@@ -9,7 +9,7 @@
     <div class="md-toolbar-row md-collapse-lateral">
       <div class="md-toolbar-section-start">
         <h3 class="md-title">
-          <b>Medalleros</b>
+          <LogoImage sourceImage="/images/otros/logo.png" />
         </h3>
       </div>
       <div class="md-toolbar-section-end">
@@ -80,9 +80,12 @@ function resizeThrottler(actualResizeHandler) {
 }
 
 import MobileMenu from "@/layout/MobileMenu";
+import LogoImage from "@/components/LogoImage";
+
 export default {
   components: {
-    MobileMenu
+    MobileMenu,
+    LogoImage
   },
   props: {
     type: {

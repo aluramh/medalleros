@@ -1,18 +1,7 @@
 <template>
   <div class="wrapper">
     <!-- Header -->
-    <parallax :style="headerStyle" class="page-header header-filter">
-      <div class="md-layout">
-        <div class="md-layout-item">
-          <div class="image-wrapper">
-            <div class="brand">
-              <h1>Medalleros</h1>
-              <h3>Luce tus medallas!</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-    </parallax>
+    <PageHeader />
 
     <div class="main main-raised">
       <!-- UI Components -->
@@ -38,7 +27,7 @@
           <div class="container">
             <div class="md-layout">
               <div class="md-layout-item md-size-66 md-xsmall-size-100 mx-auto text-center">
-                <h2 class="title text-center">Medallas</h2>
+                <h2 class="title text-center">Medallas 🥇</h2>
                 <h5
                   class="description"
                 >Dale un vistazo a nuestra seleccion de medalleros disponibles.</h5>
@@ -168,8 +157,10 @@ import JavascriptComponents from "./components/JavascriptComponentsSection";
 import { LoginCard } from "@/components";
 import imagesArray from "@/assets/js/images.js";
 import { Modal } from "@/components";
+// Sections
 import ContactSection from "./sections/ContactSection";
 import InformationSection from "./sections/InformationSection";
+import PageHeader from "./sections/PageHeader";
 
 export default {
   components: {
@@ -184,18 +175,12 @@ export default {
     // TypographyImages,
     JavascriptComponents,
     LoginCard,
-    // Sections
     ContactSection,
-    InformationSection
+    InformationSection,
+    PageHeader
   },
   bodyClass: "index-page",
-  props: {
-    image: {
-      type: String,
-      // default: require("@/assets/img/headerImage.jpg")
-      default: require("../../public/images/medalleros200/IMG_1512.jpg")
-    }
-  },
+
   data() {
     return {
       modalImage: null,
@@ -229,13 +214,6 @@ export default {
     classicModalOpen(src) {
       this.classicModal = true;
       this.modalImage = src;
-    }
-  },
-  computed: {
-    headerStyle() {
-      return {
-        backgroundImage: `url(${this.image})`
-      };
     }
   }
 };

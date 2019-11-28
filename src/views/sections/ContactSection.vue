@@ -6,7 +6,7 @@
       <div class="container">
         <div class="md-layout">
           <div class="md-layout-item md-size-66 md-xsmall-size-100 mx-auto">
-            <h2 class="text-center title">Dudas? Contactanos!</h2>
+            <h2 class="text-center title">Dudas? Escríbenos!</h2>
             <h4
               :style="{ fontSize: '1.125rem'}"
               class="text-center description"

@@ -3,6 +3,7 @@
     <slot></slot>
   </div>
 </template>
+
 <script>
 function debounce(func, wait, immediate) {
   let timeout;
@@ -17,6 +18,7 @@ function debounce(func, wait, immediate) {
     if (immediate && !timeout) func.apply(context, args);
   };
 }
+
 export default {
   name: "parallax",
   data() {
@@ -28,9 +30,17 @@ export default {
   methods: {
     handleScroll(scrollVal) {
       let oVal = scrollVal / 3;
+
       this.styles = {
         transform: `translate3d(0, ${oVal}px,0)`
       };
+
+      // Add blur
+      // let blurValue = oVal / 15;
+      // this.styles = {
+      //   ...this.styles,
+      //   filter: `blur(${blurValue}px)`
+      // };
     },
     checkForParallax(scrollVal) {
       let fn = debounce(
@@ -45,6 +55,8 @@ export default {
     window.addEventListener("scroll", function() {
       if (window.innerWidth > 991) {
         let scrollVal = this.scrollY;
+
+        console.log({ scrollVal });
         self.checkForParallax(scrollVal);
       }
     });

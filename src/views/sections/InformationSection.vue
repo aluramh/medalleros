@@ -7,17 +7,26 @@
     <div class="container">
       <div class="md-layout text-center">
         <div class="md-layout-item md-size-66 md-small-size-100 mx-auto">
-          <h2 class="text-center title">Buscas un medallero? Contactanos!</h2>
+          <h2 class="text-center title">Buscas un medallero? Contáctanos!</h2>
 
-          <h2>Pedidos al 8110445403</h2>
-          <h4>
-            Cabo Breton 4057
-            Rincón de La Primavera 6o Sector
-            67174 Guadalupe, N.L.
-          </h4>
+          <h2>
+            Pedidos al telefono
+            <a :href="`tel:${phone}`">
+              <span class="contact_link">{{ phone }}</span>
+            </a>
+          </h2>
+
+          <h3>o</h3>
+
+          <h2>
+            <a :href="`mailto:${email}`" target="_blank">
+              <span class="contact_link">{{ email }}</span>
+            </a>
+          </h2>
+          <h4></h4>
           <p>
-            Medalleros de acero con pintura horneada para exterior e interior
-            <br />Entregas a domicilio
+            Medalleros de acero con pintura horneada para exterior e interior.
+            <br />Hacemos entregas a domicilio desde Contry la Silla.
           </p>
         </div>
       </div>
@@ -26,16 +35,29 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data: () => ({
+    email: "medallerosmex@gmail.com",
+    phone: "8119991614"
+  })
+};
 </script>
 
 <style lang="scss">
 $brightness: 55%;
+$white: rgb(230, 219, 219);
 
 #information {
   position: relative;
   overflow: hidden;
   background-color: red;
+
+  h2,
+  h3,
+  h4,
+  p {
+    color: $white !important;
+  }
 
   .blurred_background {
     /* The image used */
@@ -60,16 +82,12 @@ $brightness: 55%;
     left: -5%;
     top: -5%;
   }
-}
-</style>
 
-<style lang="scss" scoped>
-#information {
-  h2,
-  h3,
-  h4,
-  p {
-    color: rgb(230, 219, 219) !important;
+  .contact_link {
+    // color: rgb(255, 40, 40);
+    color: $white;
+    text-decoration: underline;
+    word-wrap: break-word;
   }
 }
 </style>
