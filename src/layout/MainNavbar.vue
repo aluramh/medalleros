@@ -9,7 +9,10 @@
     <div class="md-toolbar-row md-collapse-lateral">
       <div class="md-toolbar-section-start">
         <h3 class="md-title">
-          <LogoImage sourceImage="/images/otros/logo.png" />
+          <LogoImage
+            sourceImage="/images/otros/logo.png"
+            :style="visibilityStyle"
+          />
         </h3>
       </div>
       <div class="md-toolbar-section-end">
@@ -30,12 +33,12 @@
             </mobile-menu>
 
             <md-list>
-              <md-list-item href="#galeria">
+              <md-list-item href="#galeria" @click="toggleNavbarMobile()">
                 <i class="material-icons">image</i>
                 <p>Galeria</p>
               </md-list-item>
 
-              <md-list-item href="#information">
+              <md-list-item href="#information" @click="toggleNavbarMobile()">
                 <i class="material-icons">phone</i>
                 <p>Contacto</p>
               </md-list-item>
@@ -46,10 +49,15 @@
                 <md-tooltip md-direction="bottom">Follow us on Twitter</md-tooltip>
               </md-list-item>-->
 
-              <md-list-item href="https://www.facebook.com/medalleros.mx" target="_blank">
+              <md-list-item
+                href="https://www.facebook.com/medalleros.mx"
+                target="_blank"
+              >
                 <i class="fab fa-facebook-square"></i>
                 <p class="hidden-lg">Facebook</p>
-                <md-tooltip md-direction="bottom">Buscanos en Facebook!</md-tooltip>
+                <md-tooltip md-direction="bottom"
+                  >Buscanos en Facebook!</md-tooltip
+                >
               </md-list-item>
 
               <!-- <md-list-item href="#" target="_blank">
@@ -87,6 +95,13 @@ export default {
     MobileMenu,
     LogoImage
   },
+  data() {
+    return {
+      extraNavClasses: "",
+      toggledClass: false,
+      showLogo: false
+    };
+  },
   props: {
     type: {
       type: String,
@@ -108,13 +123,6 @@ export default {
       default: 0
     }
   },
-  data() {
-    return {
-      extraNavClasses: "",
-      toggledClass: false
-    };
-  },
-  computed: {},
   methods: {
     scrollToGallery() {
       console.log("SCROLL TO GALLERY");
@@ -170,11 +178,22 @@ export default {
       }
     }
   },
+  computed: {
+    visibilityStyle() {
+      return this.showLogo ? { opacity: 1 } : { opacity: 0 };
+    }
+  },
   mounted() {
     document.addEventListener("scroll", this.scrollListener);
   },
+  created() {
+    this.$eventHub.$on("PAGE_HEADER_VISIBILITY_CHANGED", pageHeaderVisible => {
+      this.showLogo = !pageHeaderVisible;
+    });
+  },
   beforeDestroy() {
     document.removeEventListener("scroll", this.scrollListener);
+    this.$eventHub.$off("PAGE_HEADER_VISIBILITY_CHANGED");
   }
 };
 </script>

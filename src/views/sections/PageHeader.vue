@@ -35,6 +35,7 @@ export default {};
     &::before {
       background-image: url("/images/otros/main_background.jpeg");
       filter: brightness(50%);
+      background-position: center;
     }
   }
 

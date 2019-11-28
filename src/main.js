@@ -8,6 +8,9 @@ Vue.config.productionTip = false;
 
 Vue.use(MaterialKit);
 
+// Global event bus
+Vue.prototype.$eventHub = new Vue();
+
 const NavbarStore = {
   showNavbar: false
 };

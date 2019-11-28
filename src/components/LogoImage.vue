@@ -14,8 +14,12 @@ export default {
 };
 </script>
 
-<style>
-.logo_image > img {
-  max-width: 200px !important;
+<style lang="scss">
+.logo_image {
+  transition: opacity 200ms;
+
+  & > img {
+    max-width: 200px !important;
+  }
 }
 </style>

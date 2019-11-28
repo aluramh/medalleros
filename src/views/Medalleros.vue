@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <!-- Header -->
-    <PageHeader />
+    <PageHeader v-observe-visibility="visibilityChanged" />
 
     <div class="main main-raised">
       <!-- UI Components -->
@@ -26,28 +26,42 @@
         <div class="section section-javascript">
           <div class="container">
             <div class="md-layout">
-              <div class="md-layout-item md-size-66 md-xsmall-size-100 mx-auto text-center">
+              <div
+                class="md-layout-item md-size-66 md-xsmall-size-100 mx-auto text-center"
+              >
                 <h2 class="title text-center">Medallas 🥇</h2>
-                <h5
-                  class="description"
-                >Dale un vistazo a nuestra seleccion de medalleros disponibles.</h5>
+                <h5 class="description">
+                  Dale un vistazo a nuestra seleccion de medalleros disponibles.
+                </h5>
               </div>
             </div>
 
             <div class="md-layout">
               <div class="md-layout-item md-size-66 mx-auto text-center">
-                <md-button :class="buttonClass(250)" @click="selectedPrice = 250">$250</md-button>
+                <md-button
+                  :class="buttonClass(250)"
+                  @click="selectedPrice = 250"
+                  >$250</md-button
+                >
 
                 <md-button
                   :class="buttonClass(300)"
                   :style="{ marginLeft: '1rem', marginRight: '1rem' }"
                   @click="selectedPrice = 300"
-                >$300</md-button>
+                  >$300</md-button
+                >
 
-                <md-button :class="buttonClass(350)" @click="selectedPrice = 350">$350</md-button>
+                <md-button
+                  :class="buttonClass(350)"
+                  @click="selectedPrice = 350"
+                  >$350</md-button
+                >
               </div>
             </div>
-            <CarouselSection :images="imagesArray[selectedPrice]" @imageClicked="classicModalOpen" />
+            <CarouselSection
+              :images="imagesArray[selectedPrice]"
+              @imageClicked="classicModalOpen"
+            />
           </div>
         </div>
       </section>
@@ -58,13 +72,15 @@
           <div class="container">
             <div class="md-layout mx-auto">
               <div class="card-holder">
-                <div class="md-layout-item md-size-90 md-xsmall-size-100 mx-auto">
+                <div
+                  class="md-layout-item md-size-90 md-xsmall-size-100 mx-auto"
+                >
                   <md-card
                     :key="image"
                     :style="cardStyle(image)"
                     @click.native="classicModalOpen(image)"
                     md-with-hover
-                    v-for="{image} in imagesArray[selectedPrice]"
+                    v-for="{ image } in imagesArray[selectedPrice]"
                   >
                     <md-card-content></md-card-content>
                   </md-card>
@@ -96,7 +112,9 @@
         </template>
 
         <template slot="footer">
-          <md-button @click="classicModalHide" class="md-danger md-simple">Close</md-button>
+          <md-button @click="classicModalHide" class="md-danger md-simple"
+            >Close</md-button
+          >
         </template>
       </Modal>
 
@@ -127,7 +145,10 @@
               <!-- <md-button class="md-twitter">
                 <i class="fab fa-twitter"></i>Tweet
               </md-button>-->
-              <md-button class="md-facebook" href="https://www.facebook.com/medalleros.mx">
+              <md-button
+                class="md-facebook"
+                href="https://www.facebook.com/medalleros.mx"
+              >
                 <i class="fab fa-facebook-square"></i> Share
               </md-button>
               <!-- <md-button class="md-google">
@@ -145,6 +166,12 @@
 </template>
 
 <script>
+// External modules
+import Vue from "vue";
+import { ObserveVisibility } from "vue-observe-visibility";
+Vue.directive("observe-visibility", ObserveVisibility);
+
+// Components import
 import BasicElements from "./components/BasicElementsSection";
 import Navigation from "./components/NavigationSection";
 import SmallNavigation from "./components/SmallNavigationSection";
@@ -180,7 +207,6 @@ export default {
     PageHeader
   },
   bodyClass: "index-page",
-
   data() {
     return {
       modalImage: null,
@@ -214,6 +240,11 @@ export default {
     classicModalOpen(src) {
       this.classicModal = true;
       this.modalImage = src;
+    },
+    // Scroll callbacks user IntersectionObservers
+    visibilityChanged(isVisible, entry) {
+      this.$eventHub.$emit("PAGE_HEADER_VISIBILITY_CHANGED", isVisible);
+      // console.log("PAGE_HEADER_VISIBILITY_CHANGED");
     }
   }
 };
