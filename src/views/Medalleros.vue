@@ -1,7 +1,10 @@
 <template>
   <div class="wrapper">
     <!-- Header -->
-    <PageHeader v-observe-visibility="visibilityChanged" />
+    <PageHeader />
+
+    <!-- Intersection trigger for handling logo visibility on navbar -->
+    <div v-observe-visibility="visibilityChanged"></div>
 
     <div class="main main-raised">
       <!-- UI Components -->
@@ -41,21 +44,30 @@
                 <md-button
                   :class="buttonClass(250)"
                   @click="selectedPrice = 250"
-                  >$250</md-button
                 >
+                  <span :style="{ fontSize: '20px' }">
+                    $250
+                  </span>
+                </md-button>
 
                 <md-button
                   :class="buttonClass(300)"
                   :style="{ marginLeft: '1rem', marginRight: '1rem' }"
                   @click="selectedPrice = 300"
-                  >$300</md-button
                 >
+                  <span :style="{ fontSize: '20px' }">
+                    $300
+                  </span>
+                </md-button>
 
                 <md-button
                   :class="buttonClass(350)"
                   @click="selectedPrice = 350"
-                  >$350</md-button
                 >
+                  <span :style="{ fontSize: '20px' }">
+                    $350
+                  </span>
+                </md-button>
               </div>
             </div>
             <CarouselSection
